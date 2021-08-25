@@ -1,0 +1,135 @@
+// .style {
+//     display: block;
+//     margin-left: 90px;
+//     margin-right: auto;
+//     margin-top: 70px;
+// }
+
+// .remove {
+//     margin-top: 10px;
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap');
+
+* {
+  box-sizing: content-box;
+  margin: 0;
+}
+
+.table
+{
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+.td{
+ padding: 3px 10px;
+ text-align: center;
+}
+.th{
+  padding: 3px 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #4cd42a;
+ }
+.remove 
+{
+  // margin-top: 10px;
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.Excel
+{
+ 
+  display: block;
+  margin-left: 560px;
+}
+.Pdf
+{
+  display: block;
+  margin-top: 10px;
+  margin-left: 560px;
+}
+
+
+.bg {
+  width: 90vw;
+  height: 90vh;
+  background-image: radial-gradient(#4cd42a,#5E6A91);
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+
+ 
+}
+
+.cont {
+  position: relative;
+  width: 16vw;
+  height: 8vw;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px black;
+  margin:  0;
+
+}
+.button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #F75780;
+  position: realtive;
+  border: 1px dashed yellow;
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow 0.3s linear;
+  box-shadow: inset 0px 0px 5px black, inset 0px 0px 0px #F7EA25;
+
+}
+
+
+.blob {
+  position: relative;
+  top: 10%;
+  left: 0%;
+  width: 10vw;
+  height: 10vw;
+  fill: #bdcfd4;
+  transform-origin: 50% 50%;
+  filter: drop-shadow(4px 4px 0 black);
+  animation: bump 5.5s ease infinite;
+
+  
+  
+}
+
+.text {
+  display: flex;
+  position: absolute;
+  top: 20%;
+  font-size: 4vw;
+  text-shadow: 2px 2px black;
+  font-family: 'Anton', sans-serif;
+}
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 12px;
+}
+.wrap{
+  width: 25%;
+  position: absolute;
+  top: 18%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,98 @@
+
+
+
+<div class="style">
+
+    <div>
+        <div class="wrap">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="title" />
+            <div class="searchTerm">
+                <button class="searchButton" type="button" (click)="searchTitle()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+        
+
+        <div class='bg'>
+
+            <div class="d-flex flex-row-reverse bd-highlight mb-2">
+                <div class="p-2 bd-highlight">
+                    <span>Table Size </span>
+                    <select (change)="onTableSizeChange($event)" class="custom-select">
+                        <option *ngFor="let size of tableSizes" [ngValue]="size">
+                            {{ size }}
+                        </option>
+                    </select>
+
+
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button (click)="exportToExcel()" class="btn btn-danger btn-sm">Export To Excel</button>
+                </div>
+                <div class="p-2 bd-highlight">
+                    <button (click)="createPdf()" class="btn btn-danger btn-sm">Export To Pdf</button>
+                </div>
+            </div>
+
+            <div class="Excel">
+
+            </div>
+            <div class="Pdf">
+
+            </div>
+
+
+<div class="table-responsive">
+    
+            <table class="table table-hover" id="excel-table">
+
+                <thead >
+
+                    <tr>
+                        <th>Description</th>
+                        <th>Tilte</th>
+                        <th>Status</th>
+                        <th></th>
+                        <th>Actions</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="let tutorial of tutorials | paginate:{itemsPerPage:tableSize,currentPage:page,totalItems:count}; ">
+                        <td>{{tutorial.description}}</td>
+                        <td>{{tutorial.title}}</td>
+                        <td>{{tutorial.status}}</td>
+                        <td>
+                            <Button (click)="updateTutorial(tutorial.id!)" class="btn btn-info">Update</Button>
+                        </td>
+                        <td>
+                            <Button (click)="deleteTutorial(tutorial.id!)" class="btn btn-danger">Delete</Button>
+                        </td>
+                        <td>
+                            <Button (click)="viewTutorial(tutorial.id!)" class="btn btn-warning">View</Button>
+                        </td>
+
+                    </tr>
+                </tbody>
+
+
+                <div class="remove">
+                    <button (click)="deleteAllTutorial()" class="btn btn-danger">Remove All</button>
+                </div>
+
+            </table>
+            
+</div>
+
+
+            <div class="d-flex justify-content-center">
+                <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+                </pagination-controls>
+            </div>
+
+            
+        </div>
